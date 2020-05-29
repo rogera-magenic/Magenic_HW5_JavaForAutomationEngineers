@@ -8,4 +8,4 @@ This HW is different from each other homework, as you will be creating the entir
 Your goal for this homework is to create a java console application that represents a Movie Store. Every TODO must be completed for completion and all previous Homeworks can be used as reference.
 
 ## TODO FOR HOMEWORK
-- [ ] a
+- [ ] Create a Java project
