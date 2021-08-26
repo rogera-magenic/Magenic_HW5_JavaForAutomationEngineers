@@ -110,7 +110,11 @@ public class MovieStore extends OptionStrings {
             if (movieQtyToBuy > movieSearch.getQuantity()) {
                 System.out.println("Our MOVIE: " + movieSearch.getName() + " has only " + movieSearch.getQuantity() +
                         " stocks left. No transaction was made");
-            } else {
+            }
+            else if (movieQtyToBuy <=0) {
+                System.out.println("Invalid quantity. Quantity should be greater than 0.");
+            }
+            else {
 
                 System.out.println("MOVIE: " + movieSearch.getName() + " with " + movieQtyToBuy +
                         " quantity has a total of " + movieSearch.getPrice() * movieQtyToBuy);
@@ -120,7 +124,7 @@ public class MovieStore extends OptionStrings {
                 int userChoice = UserHelperMethods.displayOptionsAndWaitForValidOption(BUY_MOVIE_OPTIONS);
                 String userChoiceText = BUY_MOVIE_OPTIONS[userChoice];
 
-                if(userChoiceText.equals("Buy")) {
+                if (userChoiceText.equals("Buy")) {
                     movieDatabase.updateMovieQuantity(movieSearch.getName(),
                             movieSearch.getQuantity() - movieQtyToBuy);
                     System.out.println("MOVIE: " + movieSearch.getName() + " with " + movieQtyToBuy +

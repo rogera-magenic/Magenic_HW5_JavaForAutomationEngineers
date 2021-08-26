@@ -26,7 +26,10 @@ public class MovieDatabase {
 
     public void addMovie(Movie newMovie) {
         if(findMovieByName(newMovie.getName()).isEmpty())
-            movieArchive.add(newMovie);
+            if(newMovie.getQuantity() > 0 )
+                movieArchive.add(newMovie);
+            else
+                System.out.println("Invalid quantity. Quantity should be greater than 0. No Update was done.");
         else
             System.out.println("Movie [" + newMovie.getName() + "] exists! No Update was done." +
                     " Please use Update Movie function for price and quantity." + System.lineSeparator());
